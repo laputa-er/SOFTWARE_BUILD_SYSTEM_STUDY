@@ -22,7 +22,7 @@ LIB_COMMAND := ar -rs
 $(PROG):$(CALC_OBJS) $(LIBMATH) $(LIBPRINT)
 	$(CC) $(CFLAGS) -o $@ $^
 $(LIBMATH):$(LIBMATH_OBJS)
-	$(LIB_COMMAND) $@ @^
+	$(LIB_COMMAND) $@ $^
 $(LIBPRINT):$(LIBPRINT_OBJS)
 	$(LIB_COMMAND) $@ $^
 
