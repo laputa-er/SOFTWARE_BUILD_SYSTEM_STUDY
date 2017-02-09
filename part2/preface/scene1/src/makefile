@@ -1,7 +1,7 @@
-SRCS := add.o calc.o mult.o sub.o
+SRCS := add.c calc.c mult.c sub.c
 PROG := calculator
 CC := gcc
-CFLAGS := 
+CFLAGS := -g
 OBJS := $(SRCS:.c = .o)
 
 $(PROG):$(OBJS)
