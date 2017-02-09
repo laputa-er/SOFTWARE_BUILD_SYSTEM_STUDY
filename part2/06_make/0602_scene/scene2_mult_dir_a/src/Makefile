@@ -19,16 +19,15 @@ CC := gcc
 C_FLAGS := -g
 LIB_COMMAND := ar -rs
 
-$(PROG):$(CALC_OBJS) $(LIBMATH) $(LIBPRINT)
+# 规则
+$(PROG):$(CALC_OBJS) $(LIBMATH) $(LIBPRINT) # 链接
 	$(CC) $(CFLAGS) -o $@ $^
-$(LIBMATH):$(LIBMATH_OBJS)
+$(LIBMATH):$(LIBMATH_OBJS) # 静态库 libmath
 	$(LIB_COMMAND) $@ $^
-$(LIBPRINT):$(LIBPRINT_OBJS)
+$(LIBPRINT):$(LIBPRINT_OBJS) # 静态库 libprint
 	$(LIB_COMMAND) $@ $^
 
-%.o:%.c
+%.o:%.c # 所有目标文件
 	$(CC) -c -o $@ $^
 clean:
-	rm $(CALC_OBJS) $(LIBMATH_OBJS) $(LIBPRINT_OBJS) $(PROG)
-
-
+	rm $(CALC_OBJS) $(LIBMATH_OBJS) $(LIBPRINT_OBJS) $(PROG) $(LIBMATH) $(LIBPRINT)
