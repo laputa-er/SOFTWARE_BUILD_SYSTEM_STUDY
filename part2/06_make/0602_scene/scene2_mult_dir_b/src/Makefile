@@ -9,4 +9,4 @@ all:
 	$(MAKE) -C libprint
 	$(MAKE) -C calc
 clean:
-	rm -rf {calc,libmath,libprint}.{d,o,a}
+	rm -rf {calc,libmath,libprint}/*{d,o,a}
