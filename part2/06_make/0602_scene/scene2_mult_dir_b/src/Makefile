@@ -8,5 +8,9 @@ all:
 	$(MAKE) -C libmath
 	$(MAKE) -C libprint
 	$(MAKE) -C calc
+
+.PHONY: clean
 clean:
-	rm -rf {calc,libmath,libprint}/*{d,o,a}
+	$(MAKE) -C libmath clean
+	$(MAKE) -C libprint clean
+	$(MAKE) -C calc clean

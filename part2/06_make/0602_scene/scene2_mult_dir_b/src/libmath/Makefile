@@ -13,3 +13,7 @@ $(LIB): $(OBJS)
 # 所有 .d 文件都会匹配到这个规则来生成
 %.d: %.c
 	$(CC) -MM $(CFLAGS) $< | sed 's#\(.*\)\.o: #\1.o \1\.d: #g' > $@
+
+.PHONY: clean
+clean:
+	rm -f $(OBJS) $(LIB) *.d

@@ -7,3 +7,7 @@ OBJS := $(SRCS:.c=.o)
 
 $(PROG): $(OBJS) $(LIBS)
 	$(CC) -o $@ $^
+
+.PHONY: clean
+clean:
+	rm -f $(OBJS) $(LIB) *.d
