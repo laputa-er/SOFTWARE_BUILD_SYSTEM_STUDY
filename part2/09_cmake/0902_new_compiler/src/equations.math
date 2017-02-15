@@ -1,0 +1,13 @@
+#
+# This test file has a number of equtions in it, but
+# it alse include some .mathinc file that alse contain
+# equtions
+#
+1+2
+4*5
+6/2
+import equl.mathinc
+10/2
+100/4
+import equ2.mathinc
+10+20
