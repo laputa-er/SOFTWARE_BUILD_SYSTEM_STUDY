@@ -1,0 +1,16 @@
+project(find-perl)
+cmake_minimum_required(VERSION 2.6)
+
+# 包含 FindPerl， CMake 自动完成 perl 解释器的查找工作
+include(FindPerl)
+
+# 如果找到了 perl 程序，执行 perl 脚本
+if(PERL_FOUND)
+	execute_process(
+		COMMAND ${PERL_EXECUTABLE} ${PROJECT_SOURCE_DIR}/config.pl
+	)
+# 否则就输出错误信息
+else()
+	message(SEND_ERROR "There is no perl interpreter on this system")
+endif()
+

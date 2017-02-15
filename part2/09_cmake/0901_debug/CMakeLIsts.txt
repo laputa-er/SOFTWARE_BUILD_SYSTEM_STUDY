@@ -1,0 +1,8 @@
+# 设置编译过程为调试模式（在 UNIX 系统中，上例生成的结果是把 -g 标志参数加到 C 编译器命令行）。
+set(CMAKE_BUILD_TYPE Debug)
+
+# 在编译当前目录中的所有 C 文件时，命令行中添加 TEST=1 选项。
+set_property(DIRECTORY PROPERTY COMPILE_DEFINITIONS TEST=1)
+
+# 在对 add.c 进行编译时，命令行中添加 QUICKADD=1 选项。
+set_property(SOURCE add.c PROPERTY COMPILE_DEFINITIONS QUICKADD=1)
